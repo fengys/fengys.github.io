@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邮箱配置指南</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .config-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+        
+        h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .config-item {
+            margin-bottom: 15px;
+        }
+        
+        .config-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .config-value {
+            background: #fff;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>邮箱配置指南</h1>
+        
+        <div class="config-section">
+            <h2>接收邮件服务器 (IMAP)</h2>
+            <div class="config-item">
+                <span class="config-title">服务器地址</span>
+                <div class="config-value">imap.example.com</div>
+            </div>
+            <div class="config-item">
+                <span class="config-title">端口号</span>
+                <div class="config-value">993</div>
+            </div>
+            <div class="config-item">
+                <span class="config-title">安全连接</span>
+                <div class="config-value">SSL/TLS</div>
+            </div>
+        </div>
+        
+        <div class="config-section">
+            <h2>发送邮件服务器 (SMTP)</h2>
+            <div class="config-item">
+                <span class="config-title">服务器地址</span>
+                <div class="config-value">smtp.example.com</div>
+            </div>
+            <div class="config-item">
+                <span class="config-title">端口号</span>
+                <div class="config-value">465</div>
+            </div>
+            <div class="config-item">
+                <span class="config-title">安全连接</span>
+                <div class="config-value">SSL/TLS</div>
+            </div>
+        </div>
+        
+        <div class="config-section">
+            <h2>登录信息</h2>
+            <div class="config-item">
+                <span class="config-title">用户名</span>
+                <div class="config-value">您的完整邮箱地址 (例如: username@example.com)</div>
+            </div>
+            <div class="config-item">
+                <span class="config-title">密码</span>
+                <div class="config-value">您的邮箱密码</div>
+            </div>
+        </div>
+        
+        <div class="config-section">
+            <h2>注意事项</h2>
+            <ul style="padding-left: 20px;">
+                <li>请确保您已开启邮箱的IMAP/SMTP服务</li>
+                <li>如果使用两步验证，可能需要使用应用专用密码</li>
+                <li>如连接失败，请检查防火墙和安全软件的设置</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
