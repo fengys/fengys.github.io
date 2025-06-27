@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Clock</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .clock-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .clock {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .city {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        .time {
+            font-size: 1.5rem;
+            color: #3498db;
+        }
+        .date {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        .flag {
+            width: 40px;
+            height: 25px;
+            object-fit: cover;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>World Clock</h1>
+    <div class="clock-container">
+        <div class="clock" id="newyork">
+            <img src="https://flagcdn.com/w20/us.png" alt="USA flag" class="flag">
+            <div class="city">New York</div>
+            <div class="time"></div>
+            <div class="date"></div>
+        </div>
+        <div class="clock" id="london">
+            <img src="https://flagcdn.com/w20/gb.png" alt="UK flag" class="flag">
+            <div class="city">London</div>
+            <div class="time"></div>
+            <div class="date"></div>
+        </div>
+        <div class="clock" id="tokyo">
+            <img src="https://flagcdn.com/w20/jp.png" alt="Japan flag" class="flag">
+            <div class="city">Tokyo</div>
+            <div class="time"></div>
+            <div class="date"></div>
+        </div>
+        <div class="clock" id="beijing">
+            <img src="https://flagcdn.com/w20/cn.png" alt="China flag" class="flag">
+            <div class="city">Beijing</div>
+            <div class="time"></div>
+            <div class="date"></div>
+        </div>
+        <div class="clock" id="paris">
+            <img src="https://flagcdn.com/w20/fr.png" alt="France flag" class="flag">
+            <div class="city">Paris</div>
+            <div class="time"></div>
+            <div class="date"></div>
+        </div>
+        <div class="clock" id="sydney">
+            <img src="https://flagcdn.com/w20/au.png" alt="Australia flag" class="flag">
+            <div class="city">Sydney</div>
+            <div class="time"></div>
+            <div class="date"></div>
+        </div>
+        <div class="clock" id="moscow">
+            <img src="https://flagcdn.com/w20/ru.png" alt="Russia flag" class="flag">
+            <div class="city">Moscow</div>
+            <div class="time"></div>
+            <div class="date"></div>
+        </div>
+        <div class="clock" id="dubai">
+            <img src="https://flagcdn.com/w20/ae.png" alt="UAE flag" class="flag">
+            <div class="city">Dubai</div>
+            <div class="time"></div>
+            <div class="date"></div>
+        </div>
+    </div>
+
+    <script>
+        function updateClocks() {
+            const timeZones = {
+                newyork: 'America/New_York',
+                london: 'Europe/London',
+                tokyo: 'Asia/Tokyo',
+                beijing: 'Asia/Shanghai',
+                paris: 'Europe/Paris',
+                sydney: 'Australia/Sydney',
+                moscow: 'Europe/Moscow',
+                dubai: 'Asia/Dubai'
+            };
+
+            for (const [id, timeZone] of Object.entries(timeZones)) {
+                const now = new Date();
+                const options = {
+                    timeZone: timeZone,
+                    hour12: true,
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    second: 'numeric'
+                };
+                const dateOptions = {
+                    timeZone: timeZone,
+                    weekday: 'short',
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                };
+
+                const timeStr = now.toLocaleTimeString('en-US', options);
+                const dateStr = now.toLocaleDateString('en-US', dateOptions);
+
+                document.querySelector(`#${id} .time`).textContent = timeStr;
+                document.querySelector(`#${id} .date`).textContent = dateStr;
+            }
+        }
+
+        updateClocks();
+        setInterval(updateClocks, 1000);
+    </script>
+</body>
+</html>
