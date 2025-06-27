@@ -1,0 +1,114 @@
+由于您要求的是一个静态HTML页面且不包含JavaScript，而时间动态显示需要JS来实现，因此我只能提供一个静态的时间显示框架。以下是静态的时间显示页面结构：
+
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界时钟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        .clock-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .clock {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        .country {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        .time {
+            font-size: 20px;
+            color: #2c3e50;
+        }
+        .note {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>世界时钟</h1>
+        
+        <div class="clock-container">
+            <div class="clock">
+                <div class="country">中国 (北京时间)</div>
+                <div class="time" id="china-time">--:--:--</div>
+                <div class="timezone">UTC+8</div>
+            </div>
+            
+            <div class="clock">
+                <div class="country">美国 (纽约时间)</div>
+                <div class="time" id="us-time">--:--:--</div>
+                <div class="timezone">UTC-5 (夏令时 UTC-4)</div>
+            </div>
+            
+            <div class="clock">
+                <div class="country">日本 (东京时间)</div>
+                <div class="time" id="japan-time">--:--:--</div>
+                <div class="timezone">UTC+9</div>
+            </div>
+            
+            <div class="clock">
+                <div class="country">英国 (伦敦时间)</div>
+                <div class="time" id="uk-time">--:--:--</div>
+                <div class="timezone">UTC+0 (夏令时 UTC+1)</div>
+            </div>
+            
+            <div class="clock">
+                <div class="country">法国 (巴黎时间)</div>
+                <div class="time" id="france-time">--:--:--</div>
+                <div class="timezone">UTC+1 (夏令时 UTC+2)</div>
+            </div>
+        </div>
+        
+        <div class="note">
+            这是一个静态页面，如需显示实时时间，请添加JavaScript代码。
+        </div>
+    </div>
+</body>
+</html>
+```
+
+注意：由于您要求不包含JavaScript，这个页面只能显示静态时间占位符。要实现实时时间显示，需要使用JavaScript来获取当前时间并进行时区转换。
